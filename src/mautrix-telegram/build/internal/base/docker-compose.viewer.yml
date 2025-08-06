@@ -1,0 +1,33 @@
+services:
+  mautrix-telegram:
+  mautrix-telegram-registration-viewer:
+    container_name: mautrix-telegram-registration-viewer
+    image: alpine:latest
+    depends_on:
+      mautrix-telegram:
+        condition: service_started
+    volumes:
+      - mautrix-telegram-data:/data:ro
+    command: |
+      sh -c '
+        echo "=== Waiting for registration.yaml to be created ==="
+        
+        for i in $$(seq 1 60); do
+          if [ -f /data/registration.yaml ]; then
+            echo "=== REGISTRATION.YAML CONTENT ==="
+            cat /data/registration.yaml
+            echo "=== END OF REGISTRATION.YAML ==="
+            exit 0
+          fi
+          echo "Waiting for registration.yaml... attempt $$i/60"
+          sleep 1
+        done
+        
+        echo "ERROR: registration.yaml not found after 60 seconds"
+        exit 1
+      '
+    restart: "no" 
+
+volumes:
+  mautrix-telegram-data:
+    name: mautrix-telegram-data

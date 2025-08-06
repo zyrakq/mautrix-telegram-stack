@@ -1,0 +1,4 @@
+services:
+  mautrix-telegram:
+    ports:
+      - 29317:29317

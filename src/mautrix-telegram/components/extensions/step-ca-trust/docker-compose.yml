@@ -1,0 +1,5 @@
+services:
+  mautrix-telegram:
+    environment:
+      STEP_CA_TRUST: ${STEP_CA_TRUST:-true}
+      STEP_CA_TRUST_RESTART: ${STEP_CA_TRUST_RESTART:-true}

@@ -1,0 +1,8 @@
+services:
+  mautrix-telegram:
+    networks:
+      - mautrix-telegram-workspace-network
+
+networks:
+  mautrix-telegram-workspace-network:
+    external: true

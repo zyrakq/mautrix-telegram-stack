@@ -1,0 +1,8 @@
+services:
+  mautrix-telegram:
+    networks:
+      - matrix-network
+
+networks:
+  matrix-network:
+    external: true
