@@ -1,7 +1,7 @@
 services:
   mautrix-telegram:
   mautrix-telegram-registration-viewer:
-    container_name: mautrix-telegram-registration-viewer
+    container_name: ${CONTAINER_NAME:-mautrix-telegram}-registration-viewer
     image: alpine:latest
     depends_on:
       mautrix-telegram:
@@ -30,4 +30,4 @@ services:
 
 volumes:
   mautrix-telegram-data:
-    name: mautrix-telegram-data
+    name: ${CONTAINER_NAME:-mautrix-telegram}-data

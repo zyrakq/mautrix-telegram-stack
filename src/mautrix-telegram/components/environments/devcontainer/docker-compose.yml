@@ -5,4 +5,5 @@ services:
 
 networks:
   mautrix-telegram-workspace-network:
+    name: ${CONTAINER_NAME:-mautrix-telegram}-workspace-network
     external: true

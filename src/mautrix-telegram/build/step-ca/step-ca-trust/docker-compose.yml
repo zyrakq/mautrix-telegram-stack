@@ -1,6 +1,6 @@
 services:
   mautrix-telegram-init:
-    container_name: mautrix-telegram-init
+    container_name: ${CONTAINER_NAME:-mautrix-telegram}-init
     image: alpine:latest
     configs:
       - source: telegram-config
@@ -15,7 +15,7 @@ services:
         fi
       "
   mautrix-telegram:
-    container_name: mautrix-telegram
+    container_name: ${CONTAINER_NAME:-mautrix-telegram}
     image: dock.mau.dev/mautrix/telegram:latest
     # restart: unless-stopped
     depends_on:
@@ -35,7 +35,7 @@ services:
       - step-ca-network
 volumes:
   mautrix-telegram-data:
-    name: mautrix-telegram-data
+    name: ${CONTAINER_NAME:-mautrix-telegram}-data
   step-ca-certs:
     name: step-ca-certs
     external: true
