@@ -70,6 +70,7 @@ configs:
         startup_sync: ${MATRIX_TELEGRAM_BRIDGE_STARTUP_SYNC:-true}
         sync_direct_chats: ${MATRIX_TELEGRAM_BRIDGE_SYNC_DIRECT_CHATS:-true}
         sync_create_limit: ${MATRIX_TELEGRAM_BRIDGE_SYNC_CREATE_LIMIT:-0}
+        command_prefix: "${MATRIX_TELEGRAM_BRIDGE_COMMAND_PREFIX:-"!tg"}"
         backfill:
           enable: ${MATRIX_TELEGRAM_BRIDGE_BACKFILL_ENABLE:-false}
         permissions:

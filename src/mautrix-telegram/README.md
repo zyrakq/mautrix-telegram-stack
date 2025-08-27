@@ -150,6 +150,7 @@ Each environment can be combined with any extension:
 ### Base Configuration
 
 - `COMPOSE_PROJECT_NAME`: Project name for Docker Compose (default: mautrix-telegram)
+- `CONTAINER_NAME`: Container name for the bridge service (default: mautrix-telegram)
 
 ### Matrix Homeserver Configuration
 
@@ -186,6 +187,8 @@ Each environment can be combined with any extension:
 - `MATRIX_TELEGRAM_BRIDGE_STARTUP_SYNC`: Sync chats on startup (default: true)
 - `MATRIX_TELEGRAM_BRIDGE_SYNC_DIRECT_CHATS`: Sync direct chats (default: true)
 - `MATRIX_TELEGRAM_BRIDGE_SYNC_CREATE_LIMIT`: Limit for creating new portals (default: 0 = unlimited)
+- `MATRIX_TELEGRAM_BRIDGE_COMMAND_PREFIX`: Command prefix for bridge commands (default: "!tg")
+- `MATRIX_TELEGRAM_BRIDGE_BACKFILL_ENABLE`: Enable message backfill (default: false)
 - `MATRIX_TELEGRAM_BRIDGE_PERMISSIONS_USERS`: Default permission level for domain users (default: puppeting)
 
 ### Let's Encrypt Configuration
