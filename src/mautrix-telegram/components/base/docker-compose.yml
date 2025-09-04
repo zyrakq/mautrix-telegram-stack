@@ -18,6 +18,11 @@ services:
     container_name: ${CONTAINER_NAME:-mautrix-telegram}
     image: dock.mau.dev/mautrix/telegram:latest
     # restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: 10m
+        max-file: 3
     depends_on:
       - mautrix-telegram-init
     volumes:
