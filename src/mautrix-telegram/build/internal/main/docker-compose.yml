@@ -29,9 +29,6 @@ services:
       - mautrix-telegram-data:/data
     networks:
       - matrix-network
-    environment:
-      STEP_CA_TRUST: ${STEP_CA_TRUST:-true}
-      STEP_CA_TRUST_RESTART: ${STEP_CA_TRUST_RESTART:-true}
 volumes:
   mautrix-telegram-data:
     name: ${CONTAINER_NAME:-mautrix-telegram}-data
